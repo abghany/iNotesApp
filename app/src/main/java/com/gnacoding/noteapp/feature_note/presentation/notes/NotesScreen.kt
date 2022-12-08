@@ -24,7 +24,9 @@ import com.gnacoding.noteapp.core.util.TestTags
 import com.gnacoding.noteapp.feature_note.presentation.notes.components.NoteItem
 import com.gnacoding.noteapp.feature_note.presentation.notes.components.OrderSection
 import com.gnacoding.noteapp.feature_note.presentation.util.Screen
+import com.gnacoding.noteapp.ui.theme.LightGray
 import com.gnacoding.noteapp.ui.theme.NoteAppTheme
+import com.gnacoding.noteapp.ui.theme.White
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -43,10 +45,11 @@ fun NotesScreen(
                 onClick = {
                     navController.navigate(Screen.AddEditNoteScreen.route)
                 },
-                backgroundColor = MaterialTheme.colors.primary
+                backgroundColor = LightGray
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_add_note),
+                    tint = White,
                     contentDescription = "Add note"
                 )
             }
@@ -74,11 +77,12 @@ fun NotesScreen(
                     }
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_sort),
+                        painter = painterResource(id = R.drawable.ic_filter),
                         contentDescription = "Sort"
                     )
                 }
             }
+            Spacer(modifier = Modifier.height(8.dp))
             AnimatedVisibility(
                 visible = state.value.isOrderSectionVisible,
                 enter = fadeIn() + slideInVertically(),
@@ -95,7 +99,6 @@ fun NotesScreen(
                     }
                 )
             }
-            Spacer(modifier = Modifier.height(16.dp))
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.value.notes) { note ->
                     NoteItem(

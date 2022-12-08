@@ -2,6 +2,7 @@
 <resources>
     <style name="Theme.NoteApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/dark_gray</item>
+        <item name="android:navigationBarColor">@color/dark_gray</item>
     </style>
 
     <style name="Theme.NoteApp.NoActionBar">

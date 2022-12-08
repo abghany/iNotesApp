@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Save
+import androidx.compose.material.icons.rounded.Save
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -26,6 +26,8 @@ import androidx.navigation.NavController
 import com.gnacoding.noteapp.core.util.TestTags
 import com.gnacoding.noteapp.feature_note.domain.model.Note
 import com.gnacoding.noteapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
+import com.gnacoding.noteapp.ui.theme.LightGray
+import com.gnacoding.noteapp.ui.theme.White
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -69,10 +71,11 @@ fun AddEditNoteScreen(
                 onClick = {
                     viewModel.onEvent(AddEditNoteEvent.SaveNote)
                 },
-                backgroundColor = MaterialTheme.colors.primary
+                backgroundColor = LightGray
             ) {
                 Icon(
-                    imageVector = Icons.Default.Save,
+                    imageVector = Icons.Rounded.Save,
+                    tint = White,
                     contentDescription = "Save note"
                 )
             }
@@ -132,7 +135,7 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h5,
+                textStyle = MaterialTheme.typography.h6,
                 testTag = TestTags.TITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(16.dp))

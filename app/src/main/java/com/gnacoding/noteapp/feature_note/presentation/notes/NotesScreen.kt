@@ -13,7 +13,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -68,8 +67,7 @@ fun NotesScreen(
             ) {
                 Text(
                     text = "iNotes",
-                    style = MaterialTheme.typography.h5,
-                    fontWeight = FontWeight.Bold
+                    style = MaterialTheme.typography.h4
                 )
                 IconButton(
                     onClick = {
@@ -77,7 +75,7 @@ fun NotesScreen(
                     }
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_filter),
+                        painter = painterResource(id = R.drawable.ic_sort),
                         contentDescription = "Sort"
                     )
                 }
@@ -116,7 +114,7 @@ fun NotesScreen(
                             scope.launch {
                                 val result = scaffoldState.snackbarHostState.showSnackbar(
                                     message = "Note deleted",
-                                    actionLabel = "Undo"
+                                    actionLabel = "UNDO"
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NotesEvent.RestoreNote)

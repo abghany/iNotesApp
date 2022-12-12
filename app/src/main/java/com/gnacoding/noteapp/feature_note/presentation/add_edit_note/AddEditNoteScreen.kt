@@ -135,7 +135,7 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h6,
+                textStyle = MaterialTheme.typography.h5,
                 testTag = TestTags.TITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(16.dp))

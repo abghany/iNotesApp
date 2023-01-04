@@ -65,6 +65,9 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$compose_ui_version"
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
 
+    // Material3
+    implementation 'androidx.compose.material3:material3:1.0.1'
+
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
